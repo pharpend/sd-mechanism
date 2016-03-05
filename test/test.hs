@@ -1,4 +1,5 @@
-{-# LANGUAGE OverloadedStrings #-}
+module Main where
+
 import Data.Monoid ((<>))
 import Test.Tasty
 import Test.Tasty.Persist.Postgres

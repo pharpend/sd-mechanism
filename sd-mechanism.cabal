@@ -52,6 +52,8 @@ test-suite test
     hs-source-dirs:   test
     ghc-options:      -Wall -threaded -with-rtsopts=-N
     main-is:          test.hs
+    default-extensions:
+        OverloadedStrings
     other-modules:    
         Harness
         Test.Tasty.Persist.Postgres                
