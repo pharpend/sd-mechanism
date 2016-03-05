@@ -7,9 +7,13 @@ license:       AGPL-3
 license-file:  LICENSE.md
 author:        Bryan Richter and Snowdrift.coop
 maintainer:    dev@lists.snowdrift.coop
+bug-reports:   dev@lists.snowdrift.coop
 category:      Finance, Crowdfunding
 build-type:    Simple
 cabal-version: >=1.10
+extra-source-files:
+  LICENSE.md
+  README.md
 
 source-repository head
     type:     git
@@ -17,38 +21,43 @@ source-repository head
 
 library
     hs-source-dirs:   src
-    exposed-modules:  Mechanism
-                      Types
-                      Persist
+    ghc-options:      -Wall
     default-language: Haskell2010
-    build-depends:    base >= 4.7 && < 5
-                      , persistent >= 2.2.4
-                      , persistent-template >= 2.1.5
-                      , transformers >= 0.4.2.0
-                      , mtl >= 2.2.1
-                      , errors >= 2.1.1
-                      , text >= 1.2.2.0
-    ghc-options: -Wall
-    default-extensions: LambdaCase
+    default-extensions:
+        LambdaCase
+    build-depends:    
+        base >=4.7 && <5
+      , errors >=2.1.1                                  
+      , mtl >=2.2.1                                     
+      , persistent >=2.2.4                              
+      , persistent-template >=2.1.5                     
+      , text >=1.2.2.0                                  
+      , transformers >=0.4.2.0                          
+    exposed-modules:  
+        Snowdrift.Mechanism
+        Snowdrift.Mechanism.Persist
+        Snowdrift.Mechanism.Types
 
 test-suite test
-    default-language: Haskell2010
     type:             exitcode-stdio-1.0
+    default-language: Haskell2010
     hs-source-dirs:   test
-    other-modules:    Harness
-                      Test.Tasty.Persist.Postgres
-    main-is:          test.hs
     ghc-options:      -Wall -threaded -with-rtsopts=-N
-    build-depends:    base >= 4 && < 5
-                    , bytestring >= 0.10.6.0
-                    , tasty >= 0.10
-                    , tasty-hunit
-                    , sd-mechanism
-                    , persistent >= 2.2.4
-                    , transformers >= 0.4.2.0
-                    , mtl >= 2.2.1
-                    , monad-logger >= 0.3.17
-                    , postgresql-simple >= 0.5.1.2
-                    , persistent-postgresql >= 2.2.2
-                    , resource-pool >= 0.2.3.2
-                    , random >= 1.1
+    main-is:          test.hs
+    other-modules:    
+        Harness
+        Test.Tasty.Persist.Postgres                
+    build-depends:  
+        base ==4.*
+      , bytestring >=0.10.6.0                      
+      , monad-logger >=0.3.17                      
+      , mtl >=2.2.1                                
+      , persistent >=2.2.4                         
+      , persistent-postgresql >=2.2.2              
+      , postgresql-simple >=0.5.1.2                
+      , random >=1.1                               
+      , resource-pool >=0.2.3.2                    
+      , sd-mechanism                                
+      , tasty >=0.10                               
+      , tasty-hunit                                 
+      , transformers >=0.4.2.0                     
