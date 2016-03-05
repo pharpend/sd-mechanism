@@ -21,7 +21,7 @@ The mechanism is the library in Snowdrift that implements the
 You can email `dev@lists.snowdrift.coop` with any bug reports or
 concerns you might have. You can also contact us via the `#snowdrift`
 IRC channel on FreeNode.
-            
+
 [1]: https://snowdrift.coop
 [2]: https://www.haskell.org/
 [3]: https://gnu.org/licenses/agpl
