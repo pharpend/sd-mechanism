@@ -1,4 +1,4 @@
-module Types where
+module Snowdrift.Mechanism.Types where
 
 class ToMechPatron a where
     mechPatron :: a -> Int

@@ -1,6 +1,4 @@
-{-# LANGUAGE Rank2Types #-}
-{-# LANGUAGE FlexibleContexts #-}
-module Mechanism
+module Snowdrift.Mechanism
         ( -- * Manage pledges etc.
           newPledge
         , newPatron
@@ -22,8 +20,8 @@ import Control.Monad.Reader (ReaderT)
 import Database.Persist
 import Database.Persist.Sql (SqlBackend)
 
-import Types
-import Persist
+import Snowdrift.Mechanism.Persist
+import Snowdrift.Mechanism.Types
 
 -- *** Some conveniences (internal)
 right :: Monad m => m a -> ExceptT e m a
