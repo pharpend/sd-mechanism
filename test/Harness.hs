@@ -1,6 +1,6 @@
 module Harness where
 
-import Types
+import Snowdrift.Mechanism.Types
 
 data HPatron = HA Int
 data HProject = HR Int

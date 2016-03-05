@@ -5,8 +5,8 @@ import Test.Tasty.Persist.Postgres
 import Database.Persist
 import Database.Persist.Postgresql
 
-import Mechanism
-import Persist
+import Snowdrift.Mechanism
+import Snowdrift.Mechanism.Persist
 
 import Harness
 
